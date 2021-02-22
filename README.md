@@ -12,7 +12,7 @@ The main task of the project is to implement the given interface Ithesaurus.cs, 
 
 ## Requirements before starting
 1. .NET Core
-2. A SQL Server
+2. Any SQL Server
 
 ## Getting Started
 1. Start the database server
