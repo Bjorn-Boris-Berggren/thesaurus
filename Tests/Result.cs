@@ -1,7 +1,7 @@
 namespace additude.Tests
 {
     /// <summary>
-    /// Contains test result from the test excution
+    /// Contains test result from the test execution
     /// </summary>
     public class Result
     {
