@@ -16,9 +16,9 @@ The main task of the project is to implement the given interface Ithesaurus.cs, 
 
 ## Getting Started
 1. Start the database server
-2. Run thesaurus/DatabaseScript.sql on the database to create the tables
+2. Run 'thesaurus/DatabaseScript.sql' on the database to create the tables
 3. Open the file 'thesaurus/SynonymApp/ServerConfig.cs'
-4. Add the database configuration here: server, database,user, password etc.
+4. Add the database configuration here: server, database,user, password
 5. Start the terminal
 6. Go to the folder 'thesaurus/SynonymApp'
 7. Type "dotnet restore"
