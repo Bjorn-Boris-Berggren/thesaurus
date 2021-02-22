@@ -1,6 +1,12 @@
 # thesaurus
 This application gets and stores synonyms. 
 
+## Languages, frameworks and tools etc.
+1. .NET Core
+2. C#
+3. Entity Framework
+4. xUnit.net
+
 ## Requirements before starting
 1. .NET Core
 2. A SQL Server
@@ -15,3 +21,5 @@ This application gets and stores synonyms.
 7. Type "dotnet restore"
 8. Go to the root folder 'thesaurus'
 9. Type "dotnet test"
+
+
