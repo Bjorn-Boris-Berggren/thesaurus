@@ -115,7 +115,8 @@ namespace additude.thesaurus.Controllers
                     IEnumerable<int> meaningIDs = new List<int>(context.MeaningGroups.Where(w => String.Equals(word, w.WordName)).Select(w => w.MeaningID));
                     if (meaningIDs == null)
                         throw new Exception("No synonym was found");
-                    IEnumerable<string> synonyms = context.MeaningGroups.Where(p => meaningIDs.Contains(p.MeaningID)).Where(p => String.Equals(word, p.WordName) == false).Select(w => w.WordName).ToList();
+                    IEnumerable<string> synonyms = context.MeaningGroups.Where(p => meaningIDs.Contains(p.MeaningID)).Where(p => String.Equals(word, p.WordName) == false)
+                    .Select(w => w.WordName).ToList();
 
                     return synonyms;
                 }
