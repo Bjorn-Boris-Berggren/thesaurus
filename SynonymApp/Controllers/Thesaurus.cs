@@ -27,7 +27,8 @@ namespace additude.thesaurus.Controllers
             this.context = new ThesaurusContext(dbContextBuilder.Options);
         }
         /// <summary>
-        /// Maps synonyms with a meaning-ID and adds them to the MeaningGroup table. It also adds all synonyms to the Word-table if not already added. Only a-z and 0-9 are allowed.
+        /// Maps synonyms with a meaning-ID and adds them to the MeaningGroup table. 
+        /// It also adds all synonyms to the Word-table if not already added. Only a-z and 0-9 are allowed.
         /// </summary>
         public void AddSynonyms(IEnumerable<string> synonyms)
         {
