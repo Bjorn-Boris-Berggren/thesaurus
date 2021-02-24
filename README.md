@@ -1,5 +1,5 @@
 # Thesaurus
-This application gets and stores synonyms. 
+This application gets and stores synonyms. Note that only the backend side is implemented.
 
 ## The Task 
 The main task of the project is to implement the given interface Ithesaurus.cs, the file that is implementing it is 'thesaurus/SynonymApp/Controllers/Thesaurus.cs'.
