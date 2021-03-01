@@ -35,12 +35,12 @@ namespace additude.Tests
         /// <summary>
         /// Tests that it is possible to add synonyms to the database
         /// </summary>
-        [Fact]
-        public void AddSynonyms()
+        [Theory]
+        [InlineData("test")]
+        public void AddSynonyms(string testWord)
         {
             List<string> synonymsInput = new List<string>();
             List<string> synonymsOutput = new List<string>();
-            string testWord = "test";
 
             // All words must be in lower case only for the comparison, because the AddSynonyms-function converts the words to lower case 
             // before storing to database to avoid duplicates. So, it is possible to use upper case letters when storing to database but they will be converted to lower case
@@ -62,15 +62,15 @@ namespace additude.Tests
         /// <summary>
         /// Tests that it is possible to get synonyms from the database when using more than one MeaningGroup
         /// </summary>
-        [Fact]
-        public void GetSynonyms()
+        [Theory]
+        [InlineData("test", "data")]
+        public void GetSynonyms(string testWord, string dataWord)
         {
             List<string> synonymInputTest = new List<string>();
             List<string> synonymInputData = new List<string>();
             List<string> synonymOutput;
             int amountOfWords;
-            string testWord = "test";
-            string dataWord = "data";
+
 
             // All words must be in lower case for the comparison, because the AddSynonyms-function converts the strings to lower case 
             // before storing to database to avoid duplicates
@@ -102,12 +102,12 @@ namespace additude.Tests
         /// <summary>
         /// Tests that it is possible get all the words used by Thesaurus
         /// </summary>
-        [Fact]
-        public void GetWords()
+        [Theory]
+        [InlineData("test")]
+        public void GetWords(string testWord)
         {
             List<string> wordsInput = new List<string>();
             List<string> wordsOutput;
-            string testWord = "test";
 
             // All words must be in lower case for the comparison, because the AddSynonyms-function converts the strings to lower case 
             // before storing to database to avoid duplicates
@@ -128,14 +128,16 @@ namespace additude.Tests
         /// <summary>
         /// Tests that it is NOT possible to add other characters than a-z and 1-9 to the database
         /// </summary>
-        [Fact]
-        public void AddBadData()
+        [Theory]
+        [InlineData("te.st,")]
+        [InlineData("te&st/")]
+        [InlineData("te#st\\")]
+        public void AddBadData(string testWord)
         {
             result.Value = true;
             result.Message = "";
             List<string> wordsInput = new List<string>();
             List<string> wordsOutput;
-            string testWord = "te&st/";
 
             // All words must be in lower case for the comparison, because the AddSynonyms-function converts the strings to lower case 
             // before storing to database to avoid duplicates
