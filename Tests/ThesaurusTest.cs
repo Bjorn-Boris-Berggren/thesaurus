@@ -43,7 +43,8 @@ namespace additude.Tests
             List<string> synonymsOutput = new List<string>();
 
             // All words must be in lower case only for the comparison, because the AddSynonyms-function converts the words to lower case 
-            // before storing to database to avoid duplicates. So, it is possible to use upper case letters when storing to database but they will be converted to lower case
+            // before storing to database to avoid duplicates. So, it is possible to use upper case letters when storing to database but they will be converted 
+            // to lower case
             testWord = testWord.ToLower();
             synonymsInput.Add(testWord);
             int amountOfSynonyms = 4;
