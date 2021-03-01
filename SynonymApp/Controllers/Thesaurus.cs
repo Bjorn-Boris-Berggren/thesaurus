@@ -43,6 +43,14 @@ namespace additude.thesaurus.Controllers
                 {
                     throw new Exception("Requires at least two words, to be able to store synonyms");
                 }
+                // The meaningID that will be mapped with the synonyms
+                int nextMeaningID = 1;
+
+                // Generates a new meaningID-value if there are already stored MeaningGroups
+                if (context.MeaningGroups.Any())
+                {
+                    nextMeaningID = context.MeaningGroups.Max(p => p.MeaningID) + 1;
+                }
 
                 foreach (string synonym in synonyms)
                 {
@@ -63,14 +71,7 @@ namespace additude.thesaurus.Controllers
                             Name = synonymLowerCase,
                         });
                     }
-                    // The meaningID that will be mapped with the synonyms
-                    int nextMeaningID = 1;
 
-                    // Generates a new meaningID-value if there are already stored MeaningGroups
-                    if (context.MeaningGroups.Any())
-                    {
-                        nextMeaningID = context.MeaningGroups.Max(p => p.MeaningID) + 1;
-                    }
                     // Maps the synonyms with the meaningID
                     context.MeaningGroups.Add(new MeaningGroup
                     {
